@@ -4,9 +4,8 @@ class Solution:
         max_len = 0
         substring = deque([])
 
-        substring.append(s[0])
-        for i in range(1, len(s)):
-            if s[i] in substring:
+        for i in range(len(s)):
+            if substring and s[i] in substring:
                 max_len = max(max_len, len(substring))
                 while s[i] in substring:
                     substring.popleft()
